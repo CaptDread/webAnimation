@@ -1,0 +1,420 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+/* 1. Main Layout ================================= */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #2e3032;
+}
+
+/* 2. Content ================================= */
+.main-section {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	position: absolute;
+	gap: 2em;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+.main-section section {
+	border: 1.3em #000 solid;
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+}
+.main-section .headers {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 3em;
+	font-weight: 900;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.main-section .mountain-section {
+	background: linear-gradient(13deg, #00fff2, #00a2ff, #0026ff);
+}
+.main-section .mountain-section .ms-head {
+	position: relative;
+	top: 41.75%;
+	left: 9.25%;
+	-webkit-transform: rotateZ(0deg);
+	        transform: rotateZ(0deg);
+	-webkit-transform-origin: 40% 100%;
+	        transform-origin: 40% 100%;
+}
+.main-section .mountain-section .ms-background {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: -webkit-flex;
+	display: flex;
+	z-index: 0;
+}
+.main-section .mountain-section .ms-background .bkgd-mountain {
+	position: relative;
+	width: 30%;
+	height: 30%;
+	border: 0.13em #000 solid;
+	-webkit-transform: rotateZ(45deg);
+	        transform: rotateZ(45deg);
+	background: linear-gradient(-120deg, #994717, #483614, #f5a237);
+	top: 60%;
+}
+.main-section .mountain-section .ms-background .mountain3 {
+	right: -25%;
+	top: 55%;
+	width: 40%;
+	height: 40%;
+}
+.main-section .mountain-section .bkgd-foreground {
+	background: linear-gradient(13deg, #057c05, #0cb60c, #04fd04);
+	border: 0.13em #000 solid;
+	border-radius: 100px;
+	width: 120%;
+	height: 100%;
+	margin-top: -30%;
+	z-index: 1;
+	position: relative;
+	right: 8%;
+}
+.main-section .mountain-section .ms-midground {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: -120%;
+	left: 25%;
+	z-index: 2;
+}
+.main-section .mountain-section .ms-midground .main-mountain {
+	-webkit-transform: rotateZ(45deg);
+	        transform: rotateZ(45deg);
+	border: 0.13em #000 solid;
+	background: linear-gradient(-120deg, #994717, #483614, #f5a237);
+	width: 50%;
+	height: 50%;
+}
+.main-section .mountain-section .ms-foreground {
+	background: linear-gradient(13deg, #057c05, #0cb60c, #04fd04);
+	border: 0.13em #000 solid;
+	z-index: 1;
+	border-radius: 40%;
+	width: 140%;
+	right: 20%;
+	height: 100%;
+	position: relative;
+	top: -199%;
+	z-index: 3;
+}
+.main-section .mountain-section:hover {
+	border: 1.3em #fff solid;
+	transition: border 420ms linear 420ms;
+}
+.main-section .mountain-section:hover .ms-head {
+	-webkit-animation: mountain 4.2s ease-in-out infinite alternate;
+	        animation: mountain 4.2s ease-in-out infinite alternate;
+}
+.main-section .sunrise-section {
+	overflow: hidden;
+	background: url(/src/img/space.webp);
+}
+.main-section .sunrise-section .ss-backdrop {
+	width: 100%;
+	height: 60%;
+	background: linear-gradient(180deg, rgba(252, 39, 39, 0.59), #0084ff, #00c3ff);
+	transition: -webkit-transform 1300ms linear;
+	transition: transform 1300ms linear;
+	transition: transform 1300ms linear, -webkit-transform 1300ms linear;
+	-webkit-transform: translateY(120%);
+	        transform: translateY(120%);
+}
+.main-section .sunrise-section .ss-backdrop .ss-backdrop_sun {
+	width: 30%;
+	height: 30%;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	border-radius: 100%;
+	background: linear-gradient(42deg, #ffb700, #fff700, #ecec66);
+}
+.main-section .sunrise-section .ss-foreground {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	margin-top: -30px;
+}
+.main-section .sunrise-section .ss-foreground .ss-head {
+	margin-bottom: -20px;
+}
+.main-section .sunrise-section .ss-foreground .ss-foreground_grass {
+	width: 100%;
+	height: 145px;
+	background: mediumslateblue;
+}
+.main-section .sunrise-section:hover {
+	border: 1.3em #fff solid;
+	transition: border 420ms linear 420ms;
+}
+.main-section .sunrise-section:hover .ss-backdrop {
+	-webkit-transform: translateY(0%);
+	        transform: translateY(0%);
+	transition: -webkit-transform 1300ms linear;
+	transition: transform 1300ms linear;
+	transition: transform 1300ms linear, -webkit-transform 1300ms linear;
+}
+.main-section .sunrise-section:hover .ss-backdrop .ss-backdrop_sun {
+	background-size: 500% 500%;
+	-webkit-animation: shine 7s ease-in-out infinite;
+	        animation: shine 7s ease-in-out infinite;
+	box-shadow: 0px 0px 3px rgba(233, 233, 85, 0.57), 0px 0px 3px rgba(233, 233, 85, 0.57), 0px 0px 3px rgba(233, 233, 85, 0.57), 0px 0px 3px rgba(233, 233, 85, 0.57);
+}
+.main-section .sunrise-section:hover .ss-foreground_grass {
+	-webkit-animation: sunupGrass 1300ms linear 420ms both, shine 7s ease-in-out infinite;
+	        animation: sunupGrass 1300ms linear 420ms both, shine 7s ease-in-out infinite;
+}
+
+@-webkit-keyframes mountain {
+	0% {
+		-webkit-transform: rotateZ(15deg);
+		        transform: rotateZ(15deg);
+	}
+	100% {
+		-webkit-transform: rotateZ(-15deg);
+		        transform: rotateZ(-15deg);
+	}
+}
+
+@keyframes mountain {
+	0% {
+		-webkit-transform: rotateZ(15deg);
+		        transform: rotateZ(15deg);
+	}
+	100% {
+		-webkit-transform: rotateZ(-15deg);
+		        transform: rotateZ(-15deg);
+	}
+}
+@-webkit-keyframes sunupGrass {
+	0% {
+		background: mediumslateblue;
+	}
+	50% {
+		background: #015501;
+	}
+	80% {
+		background: green;
+	}
+	90% {
+		background: #04e204;
+	}
+	100% {
+		background: linear-gradient(200deg, #04e204, green, #04e204);
+		background-size: 500% 500%;
+	}
+}
+@keyframes sunupGrass {
+	0% {
+		background: mediumslateblue;
+	}
+	50% {
+		background: #015501;
+	}
+	80% {
+		background: green;
+	}
+	90% {
+		background: #04e204;
+	}
+	100% {
+		background: linear-gradient(200deg, #04e204, green, #04e204);
+		background-size: 500% 500%;
+	}
+}
+@-webkit-keyframes shine {
+	0% {
+		background-position: 90% 0%;
+	}
+	50% {
+		background-position: 11% 100%;
+	}
+	100% {
+		background-position: 90% 0%;
+	}
+}
+@keyframes shine {
+	0% {
+		background-position: 90% 0%;
+	}
+	50% {
+		background-position: 11% 100%;
+	}
+	100% {
+		background-position: 90% 0%;
+	}
+}
+/*# sourceMappingURL=main.css.map */
